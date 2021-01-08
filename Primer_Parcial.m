@@ -22,7 +22,7 @@ function varargout = Primer_Parcial(varargin)
 
 % Edit the above text to modify the response to help Primer_Parcial
 
-% Last Modified by GUIDE v2.5 07-Jan-2021 17:19:29
+% Last Modified by GUIDE v2.5 07-Jan-2021 18:00:51
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -71,3 +71,33 @@ function varargout = Primer_Parcial_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
+
+
+% --- Executes on button press in btnsucesivas.
+function btnsucesivas_Callback(hObject, eventdata, handles)
+% hObject    handle to btnsucesivas (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btnbisecciones.
+function btnbisecciones_Callback(hObject, eventdata, handles)
+% hObject    handle to btnbisecciones (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btnraices.
+function btnraices_Callback(hObject, eventdata, handles)
+% hObject    handle to btnraices (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in btnatras.
+function btnatras_Callback(hObject, eventdata, handles)
+% hObject    handle to btnatras (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+close;
+Inicio;
