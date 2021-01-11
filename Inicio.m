@@ -46,6 +46,13 @@ end
 
 % --- Executes just before Inicio is made visible.
 function Inicio_OpeningFcn(hObject, eventdata, handles, varargin)
+screenSize = get(0,'ScreenSize');
+posActual = get(gcf,'Position');
+xr = screenSize(3)-posActual(3);
+xp = round(xr/2);
+yr = screenSize(4)-posActual(4);
+yp = round(yr/2);
+set(gcf,'Position',[xp yp posActual(3) posActual(4)]);
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -86,7 +93,6 @@ function btnsegundo_Callback(hObject, eventdata, handles)
 % hObject    handle to btnsegundo (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
 
 % --- Executes on button press in btntercer.
 function btntercer_Callback(hObject, eventdata, handles)

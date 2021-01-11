@@ -22,7 +22,7 @@ function varargout = Primer_Parcial(varargin)
 
 % Edit the above text to modify the response to help Primer_Parcial
 
-% Last Modified by GUIDE v2.5 07-Jan-2021 18:00:51
+% Last Modified by GUIDE v2.5 10-Jan-2021 16:39:34
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -46,6 +46,13 @@ end
 
 % --- Executes just before Primer_Parcial is made visible.
 function Primer_Parcial_OpeningFcn(hObject, eventdata, handles, varargin)
+screenSize = get(0,'ScreenSize');
+posActual = get(gcf,'Position');
+xr = screenSize(3)-posActual(3);
+xp = round(xr/2);
+yr = screenSize(4)-posActual(4);
+yp = round(yr/2);
+set(gcf,'Position',[xp yp posActual(3) posActual(4)]);
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -78,21 +85,26 @@ function btnsucesivas_Callback(hObject, eventdata, handles)
 % hObject    handle to btnsucesivas (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear;
+clear global;
 
 % --- Executes on button press in btnbisecciones.
 function btnbisecciones_Callback(hObject, eventdata, handles)
 % hObject    handle to btnbisecciones (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear;
+clear global;
 
 % --- Executes on button press in btnraices.
 function btnraices_Callback(hObject, eventdata, handles)
 % hObject    handle to btnraices (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear;
+clear global;
+close;
+Raices;
 
 % --- Executes on button press in btnatras.
 function btnatras_Callback(hObject, eventdata, handles)
