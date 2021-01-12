@@ -95,6 +95,8 @@ function btnbisecciones_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 clear;
 clear global;
+close;
+Bisecciones;
 
 % --- Executes on button press in btnraices.
 function btnraices_Callback(hObject, eventdata, handles)
