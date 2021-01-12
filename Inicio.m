@@ -93,7 +93,8 @@ function btnsegundo_Callback(hObject, eventdata, handles)
 % hObject    handle to btnsegundo (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+close;
+Segundo_Parcial;
 % --- Executes on button press in btntercer.
 function btntercer_Callback(hObject, eventdata, handles)
 % hObject    handle to btntercer (see GCBO)
