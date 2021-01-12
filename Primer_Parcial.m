@@ -87,6 +87,8 @@ function btnsucesivas_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 clear;
 clear global;
+close;
+AproximacionesS;
 
 % --- Executes on button press in btnbisecciones.
 function btnbisecciones_Callback(hObject, eventdata, handles)
