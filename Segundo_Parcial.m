@@ -117,7 +117,8 @@ function btnInterSimple_Callback(hObject, eventdata, handles)
 % hObject    handle to btnInterSimple (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear;close;
+Interpolacion_Simple;
 
 % --- Executes on button press in btnLagrange.
 function btnLagrange_Callback(hObject, eventdata, handles)
