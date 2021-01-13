@@ -86,7 +86,7 @@ function btnAtras_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 clear;close;
-Primer_Parcial;
+Segundo_Parcial;
 
 
 function txtPol_Callback(hObject, eventdata, handles)
