@@ -109,7 +109,8 @@ function btnSeidel_Callback(hObject, eventdata, handles)
 % hObject    handle to btnSeidel (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear;close;
+Gauss_Seidel;
 
 % --- Executes on button press in btnInterSimple.
 function btnInterSimple_Callback(hObject, eventdata, handles)

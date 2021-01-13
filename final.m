@@ -1,4 +1,4 @@
-%Jacobi
+%Funcion usada en Jacobi 
 %---Funcion recursiva para obtener los factores de multiplicacion en cada
 %despeje 
 function fin = final(x,j,i,tamAp,A,auxj)

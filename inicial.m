@@ -1,5 +1,4 @@
-
-%Jacobi
+%Funcion usada en Jacobi y Gauss Seidel
 %---Funcion recursiva para obtener los factores de multiplicacion en cada
 %despeje 
 function ini = inicial(x,j,i,tamAp,A,auxj)
