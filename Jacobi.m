@@ -405,7 +405,7 @@ set(objetos,'String',limpia);
 objetos = findobj(gcbf,'Tag','txtI3');
 set(objetos,'String',limpia);
 
-
+set(handles.lblError,'Visible','off');
 clear all;
 clear global;
 
@@ -492,19 +492,19 @@ flag=0;
             end
            
         end
-    end
+    
 
-    transAprox = [x'];
-    transError = [errorX'];
-    totali = size(transAprox);
+        transAprox = [x'];
+        transError = [errorX'];
+        totali = size(transAprox);
     
-    %Generacion de matriz para contadores
-    for i=1:totali(1)
-        matrizI(i,1)=i;
-    end
+        %Generacion de matriz para contadores
+        for i=1:totali(1)
+            matrizI(i,1)=i;
+        end
     
-    matrizGneral = [matrizI transAprox transError];
+        matrizGneral = [matrizI transAprox transError];
     
-    set(handles.tblDatos,'data',matrizGneral);
-    
+        set(handles.tblDatos,'data',matrizGneral);
+    end    
     
