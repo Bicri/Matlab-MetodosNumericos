@@ -362,7 +362,10 @@ function btnAtras_Callback(hObject, eventdata, handles)
 % hObject    handle to btnAtras (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear all;
+clear global;
+close;
+Segundo_Parcial;
 
 % --- Executes on button press in btnLimpiar.
 function btnLimpiar_Callback(hObject, eventdata, handles)
@@ -374,19 +377,36 @@ set(handles.tblDatos,'data',num_elem);
 
 limpia='';
 
-objetos = findobj(gcbf,'Tag','txtTol');
+objetos = findobj(gcbf,'Tag','txtx1');
+set(objetos,'String',limpia);
+objetos = findobj(gcbf,'Tag','txty1');
+set(objetos,'String',limpia);
+objetos = findobj(gcbf,'Tag','txtz1');
 set(objetos,'String',limpia);
 
-objetos = findobj(gcbf,'Tag','txtPol');
+objetos = findobj(gcbf,'Tag','txtx2');
+set(objetos,'String',limpia);
+objetos = findobj(gcbf,'Tag','txty2');
+set(objetos,'String',limpia);
+objetos = findobj(gcbf,'Tag','txtz2');
 set(objetos,'String',limpia);
 
-objetos = findobj(gcbf,'Tag','txtAprox');
+objetos = findobj(gcbf,'Tag','txtx3');
+set(objetos,'String',limpia);
+objetos = findobj(gcbf,'Tag','txty3');
+set(objetos,'String',limpia);
+objetos = findobj(gcbf,'Tag','txtz3');
+set(objetos,'String',limpia);
+
+objetos = findobj(gcbf,'Tag','txtI1');
+set(objetos,'String',limpia);
+objetos = findobj(gcbf,'Tag','txtI2');
+set(objetos,'String',limpia);
+objetos = findobj(gcbf,'Tag','txtI3');
 set(objetos,'String',limpia);
 
 
-cla;
-cla reset;
-clear;
+clear all;
 clear global;
 
 % --- Executes on button press in btnEjecutar.

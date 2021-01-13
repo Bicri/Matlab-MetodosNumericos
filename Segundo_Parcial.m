@@ -101,7 +101,8 @@ function btnJacobi_Callback(hObject, eventdata, handles)
 % hObject    handle to btnJacobi (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear;close;
+Jacobi;
 
 % --- Executes on button press in btnSeidel.
 function btnSeidel_Callback(hObject, eventdata, handles)
