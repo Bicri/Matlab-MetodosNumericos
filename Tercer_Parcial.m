@@ -119,3 +119,7 @@ function btnSimpson_Callback(hObject, eventdata, handles)
 % hObject    handle to btnSimpson (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+clear;
+clear global;
+close;
+Simpson_Tres_Octavos;
