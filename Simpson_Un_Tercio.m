@@ -1,35 +1,35 @@
-function varargout = Trapecio(varargin)
-% TRAPECIO MATLAB code for Trapecio.fig
-%      TRAPECIO, by itself, creates a new TRAPECIO or raises the existing
+function varargout = Simpson_Un_Tercio(varargin)
+% SIMPSON_UN_TERCIO MATLAB code for Simpson_Un_Tercio.fig
+%      SIMPSON_UN_TERCIO, by itself, creates a new SIMPSON_UN_TERCIO or raises the existing
 %      singleton*.
 %
-%      H = TRAPECIO returns the handle to a new TRAPECIO or the handle to
+%      H = SIMPSON_UN_TERCIO returns the handle to a new SIMPSON_UN_TERCIO or the handle to
 %      the existing singleton*.
 %
-%      TRAPECIO('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in TRAPECIO.M with the given input arguments.
+%      SIMPSON_UN_TERCIO('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in SIMPSON_UN_TERCIO.M with the given input arguments.
 %
-%      TRAPECIO('Property','Value',...) creates a new TRAPECIO or raises the
+%      SIMPSON_UN_TERCIO('Property','Value',...) creates a new SIMPSON_UN_TERCIO or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before Trapecio_OpeningFcn gets called.  An
+%      applied to the GUI before Simpson_Un_Tercio_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to Trapecio_OpeningFcn via varargin.
+%      stop.  All inputs are passed to Simpson_Un_Tercio_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help Trapecio
+% Edit the above text to modify the response to help Simpson_Un_Tercio
 
-% Last Modified by GUIDE v2.5 14-Jan-2021 17:24:01
+% Last Modified by GUIDE v2.5 14-Jan-2021 20:00:02
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @Trapecio_OpeningFcn, ...
-                   'gui_OutputFcn',  @Trapecio_OutputFcn, ...
+                   'gui_OpeningFcn', @Simpson_Un_Tercio_OpeningFcn, ...
+                   'gui_OutputFcn',  @Simpson_Un_Tercio_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -44,8 +44,8 @@ end
 % End initialization code - DO NOT EDIT
 
 
-% --- Executes just before Trapecio is made visible.
-function Trapecio_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before Simpson_Un_Tercio is made visible.
+function Simpson_Un_Tercio_OpeningFcn(hObject, eventdata, handles, varargin)
 screenSize = get(0,'ScreenSize');
 posActual = get(gcf,'Position');
 xr = screenSize(3)-posActual(3);
@@ -53,24 +53,29 @@ xp = round(xr/2);
 yr = screenSize(4)-posActual(4);
 yp = round(yr/2);
 set(gcf,'Position',[xp yp posActual(3) posActual(4)]);
+
+
+set(handles.txtArea,'Visible','off');
+set(handles.lblArea,'Visible','off');
+set(handles.axes1,'Visible','off');
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to Trapecio (see VARARGIN)
+% varargin   command line arguments to Simpson_Un_Tercio (see VARARGIN)
 
-% Choose default command line output for Trapecio
+% Choose default command line output for Simpson_Un_Tercio
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes Trapecio wait for user response (see UIRESUME)
+% UIWAIT makes Simpson_Un_Tercio wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = Trapecio_OutputFcn(hObject, eventdata, handles) 
+function varargout = Simpson_Un_Tercio_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -85,7 +90,8 @@ function btnAtras_Callback(hObject, eventdata, handles)
 % hObject    handle to btnAtras (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear;close;
+Tercer_Parcial;
 
 
 function txtPol_Callback(hObject, eventdata, handles)
@@ -185,48 +191,82 @@ function btnLimpia_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+limpia='';
+
+objetos = findobj(gcbf,'Tag','txtPol');
+set(objetos,'String',limpia);
+
+objetos = findobj(gcbf,'Tag','txtSup');
+set(objetos,'String',limpia);
+
+objetos = findobj(gcbf,'Tag','txtInf');
+set(objetos,'String',limpia);
+
+objetos = findobj(gcbf,'Tag','txtInter');
+set(objetos,'String',limpia);
+
+cla reset;
+
+set(handles.txtArea,'Visible','off');
+set(handles.lblArea,'Visible','off');
+set(handles.axes1,'Visible','off');
+
+clear;
+clear global;
 
 % --- Executes on button press in btnEjecuta.
 function btnEjecuta_Callback(hObject, eventdata, handles)
 % hObject    handle to btnEjecuta (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-num_elem(:,:)={''};
-set(handles.tblDatos,'data',num_elem);
+set(handles.txtArea,'Visible','on');
+set(handles.lblArea,'Visible','on');
+set(handles.axes1,'Visible','on');
+
 cla reset;
 
-f=get(handles.txtPol,'String');
+g=get(handles.txtPol,'String');
 b = str2double(get(handles.txtSup,'String'));    %Limite superior
 a = str2double(get(handles.txtInf,'String'));  %Limite inferior
-n = str2double(get(handles.txtInter,'String'));  %Intervalos
+k = str2double(get(handles.txtInter,'String'));  %Intervalos
 
-h=(b-a)/n; 
-g=inline(f);
-s=0;
-%hold on;
-for i=1:n
+inf = a; sup=b;
 
-    s=h/2*(g(a+(i-1)*h)+g(a+(i)*h));
-    
-    matriz(i,1) = i;
-    matriz(i,2) = s;
+f=inline(g);
 
+n=2*k;
+S=0;
+h=(b-a)/n;
+
+for i=1:k
+    S=S+(h/3)*(f(a)+4*f(a+h)+f(a+2*h));
+    a=a+2*h;
 end
 
-set(handles.tblDatos,'data',matriz);
-
-tam = size(matriz);
-for i=1:tam(1)
-    
+set(handles.txtArea,'String',S);
+x=[inf:((inf+sup)/2):round(sup)];
+ezplot(handles.axes1,g,x);
 
 
-hold on;
-x1=linspace(a,b,n);  
-y1=subs(str2sym(f),x1);
-bar(x1,y1)
-%xlabel('Eje X')
-%ylabel('Eje y')
-title(char(f))
-plot(handles.axes1,x1,y1,'red','LineWidth',1)
-grid on;
 
+
+function txtArea_Callback(hObject, eventdata, handles)
+% hObject    handle to txtArea (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of txtArea as text
+%        str2double(get(hObject,'String')) returns contents of txtArea as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function txtArea_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to txtArea (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end

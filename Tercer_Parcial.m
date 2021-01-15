@@ -22,7 +22,7 @@ function varargout = Tercer_Parcial(varargin)
 
 % Edit the above text to modify the response to help Tercer_Parcial
 
-% Last Modified by GUIDE v2.5 14-Jan-2021 16:42:57
+% Last Modified by GUIDE v2.5 14-Jan-2021 20:39:33
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -104,12 +104,15 @@ function btnCuadro_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% --- Executes on button press in BtnSimp.
-function BtnSimp_Callback(hObject, eventdata, handles)
-% hObject    handle to BtnSimp (see GCBO)
+% --- Executes on button press in BtnSimp13.
+function BtnSimp13_Callback(hObject, eventdata, handles)
+% hObject    handle to BtnSimp13 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+clear;
+clear global;
+close;
+Simpson_Un_Tercio;
 
 % --- Executes on button press in btnSimpson.
 function btnSimpson_Callback(hObject, eventdata, handles)
