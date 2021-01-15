@@ -272,7 +272,7 @@ else
     set(handles.txtArea,'String',resultado);
     
     
-    t=[inf:((inf+sup)/2):round(sup)];
+    t=[inf:0.1:round(sup)];
     ezplot(handles.axes1,f,t);
 end
 

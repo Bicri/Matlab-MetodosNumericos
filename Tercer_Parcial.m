@@ -22,7 +22,7 @@ function varargout = Tercer_Parcial(varargin)
 
 % Edit the above text to modify the response to help Tercer_Parcial
 
-% Last Modified by GUIDE v2.5 14-Jan-2021 20:39:33
+% Last Modified by GUIDE v2.5 15-Jan-2021 11:15:20
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -55,7 +55,7 @@ yp = round(yr/2);
 set(gcf,'Position',[xp yp posActual(3) posActual(4)]);
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
+% eventdata  reserved - to be defined in a e version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to Tercer_Parcial (see VARARGIN)
 
@@ -103,6 +103,10 @@ function btnCuadro_Callback(hObject, eventdata, handles)
 % hObject    handle to btnCuadro (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+clear;
+clear global;
+close;
+Cuadratura_Gaussiana;
 
 % --- Executes on button press in BtnSimp13.
 function BtnSimp13_Callback(hObject, eventdata, handles)
@@ -123,3 +127,14 @@ clear;
 clear global;
 close;
 Simpson_Tres_Octavos;
+
+
+% --- Executes on button press in btnCuadrutab.
+function btnCuadrutab_Callback(hObject, eventdata, handles)
+% hObject    handle to btnCuadrutab (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+clear;
+clear global;
+close;
+Cuadratura_Gaussiana_Tabular;
